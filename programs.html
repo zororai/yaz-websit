@@ -58,6 +58,8 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
+                        <li><a href="index.html"><b>Home</b></a></li>
+
                         <!-- About Us Dropdown -->
                         <li class="dropdown">
                             <a href="about.html"><b>About Us</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -149,7 +151,12 @@
           <li data-filter=".filter-2025">2025</li>
         </ul><!-- End Portfolio Filters -->
 
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+        <div id="programs-loading" class="text-center py-4" style="display:none">
+          <div class="spinner-border spinner-border-sm me-2" style="color:#4c00b0"></div>
+          <span class="text-muted">Loading programs…</span>
+        </div>
+
+        <div class="row gy-4 isotope-container" id="programs-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
             <a href="all%20programs.html#vocational-skills-economic-strengthening" style="text-decoration: none; color: inherit; display: block;">
@@ -529,6 +536,83 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+  // Maps database year values to Isotope filter classes
+  const YEAR_FILTER = {
+      2019: 'filter-old', 2020: 'filter-old',
+      2021: 'filter-app', 2022: 'filter-product',
+      2023: 'filter-branding', 2024: 'filter-books',
+      2025: 'filter-2025'
+  };
+
+  function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str ?? '';
+      return d.innerHTML;
+  }
+
+  async function loadPrograms() {
+      const container = document.getElementById('programs-container');
+      const loader    = document.getElementById('programs-loading');
+      if (!container) return;
+
+      loader.style.display = 'block';
+
+      try {
+          const res      = await fetch('backend/programs.php', { signal: AbortSignal.timeout(6000) });
+          if (!res.ok) return; // keep static HTML on server error
+          const programs = await res.json();
+          if (!Array.isArray(programs) || programs.length === 0) return;
+
+          loader.style.display = 'none';
+          container.innerHTML  = programs.map(p => {
+              const fc  = YEAR_FILTER[p.year] || 'filter-old';
+              const img = p.image_path || 'assets/img/blog/ya-logo.png';
+              const url = p.detail_url || '#';
+              const snippet = p.description ? esc(p.description).slice(0, 110) + (p.description.length > 110 ? '…' : '') : '';
+              return `
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${fc}">
+                <a href="${esc(url)}" style="text-decoration:none;color:inherit;display:block">
+                  <div class="portfolio-content h-100" style="cursor:pointer">
+                    <img src="${esc(img)}" class="img-fluid" alt="${esc(p.title)}"
+                         onerror="this.src='assets/img/blog/ya-logo.png'">
+                    <div class="portfolio-info">
+                      <h4 title="More Details">${esc(p.title)}</h4>
+                      ${snippet ? `<p>${snippet}</p>` : ''}
+                    </div>
+                  </div>
+                </a>
+              </div>`;
+          }).join('');
+
+          // Reinitialize Isotope with fresh items
+          if (window.Isotope) {
+              imagesLoaded(container, function() {
+                  const iso = new Isotope(container, {
+                      itemSelector: '.portfolio-item',
+                      layoutMode:   'masonry',
+                      filter:       '*'
+                  });
+                  // Wire up the filter buttons
+                  document.querySelectorAll('.portfolio-filters li').forEach(function(li) {
+                      li.addEventListener('click', function() {
+                          document.querySelectorAll('.portfolio-filters li')
+                              .forEach(el => el.classList.remove('filter-active'));
+                          this.classList.add('filter-active');
+                          iso.arrange({ filter: this.dataset.filter === '*' ? '*' : '.' + this.dataset.filter.replace('.', '') });
+                      });
+                  });
+              });
+          }
+      } catch (err) {
+          // API not available — static programs in HTML remain visible
+          loader.style.display = 'none';
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadPrograms);
+  </script>
 
 </body>
 

@@ -182,6 +182,8 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
+                        <li><a href="index.html" class="active"><b>Home</b></a></li>
+
                         <!-- About Us Dropdown -->
                         <li class="dropdown">
                             <a href="about.html"><b>About Us</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -543,6 +545,45 @@
       </div>
 
     </section><!-- /Clients Section -->
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter section" style="background: linear-gradient(135deg, #4c00b0 0%, #e61e65 100%); padding: 70px 0;">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 style="color:#fff; font-size:2rem; font-weight:700; margin-bottom:10px;">
+              Stay Connected With Us
+            </h2>
+            <p style="color:rgba(255,255,255,.9); font-size:1.1rem; margin-bottom:30px;">
+              Get updates on our programs, health tips, and opportunities delivered straight to your WhatsApp.
+            </p>
+            <form id="newsletterForm" class="row g-2 justify-content-center">
+              <div class="col-sm-4">
+                <input type="text" id="nl-name" name="name"
+                       class="form-control form-control-lg"
+                       placeholder="Your Name">
+              </div>
+              <div class="col-sm-4">
+                <input type="tel" id="nl-phone" name="phone"
+                       class="form-control form-control-lg"
+                       placeholder="WhatsApp Number (e.g. +263...)" required>
+              </div>
+              <div class="col-sm-3">
+                <button type="submit" id="nl-btn"
+                        class="btn btn-light btn-lg w-100 fw-semibold"
+                        style="color:#4c00b0;">
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <p id="nl-msg" style="margin-top:14px; font-weight:600; display:none;"></p>
+            <p style="color:rgba(255,255,255,.65); font-size:.85rem; margin-top:12px;">
+              <i class="bi bi-shield-check me-1"></i>We respect your privacy. No spam, ever.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Newsletter Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
@@ -978,6 +1019,40 @@
                 }
             });
         });
+    </script>
+
+    <script>
+    document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn  = document.getElementById('nl-btn');
+        const msg  = document.getElementById('nl-msg');
+        btn.disabled    = true;
+        btn.textContent = 'Subscribing…';
+        msg.style.display = 'none';
+
+        try {
+            const res  = await fetch('backend/newsletter.php', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({
+                    name:  document.getElementById('nl-name').value.trim(),
+                    phone: document.getElementById('nl-phone').value.trim()
+                })
+            });
+            const data = await res.json();
+            msg.style.display = 'block';
+            msg.style.color   = data.success ? '#90EE90' : '#FFB6C1';
+            msg.textContent   = data.message || data.error || 'Something went wrong.';
+            if (data.success) this.reset();
+        } catch (err) {
+            msg.style.display = 'block';
+            msg.style.color   = '#FFB6C1';
+            msg.textContent   = 'Could not connect. Please try again.';
+        } finally {
+            btn.disabled    = false;
+            btn.textContent = 'Subscribe';
+        }
+    });
     </script>
 </body>
 </html>
