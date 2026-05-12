@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>All Programs - Youth Advocates</title>
+  <meta name="description" content="Explore Youth Advocates Zimbabwe's comprehensive programs in SRHR, economic empowerment, child protection, and public health initiatives.">
+  <meta name="keywords" content="youth advocacy, Zimbabwe, SRHR, vocational training, child marriage prevention, HIV prevention">
+
+  <!-- Favicons -->
+  <link href="assets/img/ya-logo.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Additional Custom Styles */
+    .program-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid #4c00b0;
+      margin-bottom: 2rem;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .program-icon {
+      font-size: 2.5rem;
+      color: #4c00b0;
+      margin-bottom: 1rem;
+    }
+    
+    .program-image {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .program-category {
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      background-color: rgba(76, 0, 176, 0.1);
+      color: #4c00b0;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .program-highlights {
+      background-color: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    
+    .program-highlights h5 {
+      color: #4c00b0;
+      margin-bottom: 1rem;
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-item i {
+      color: #4c00b0;
+      margin-right: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    
+    .stats-badge {
+      display: inline-block;
+      background-color: #4c00b0;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      margin: 1rem 0.5rem 1rem 0;
+    }
+    
+    .program-header {
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .program-nav {
+      position: sticky;
+      top: 100px;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .program-nav h5 {
+      color: #4c00b0;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .program-nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .program-nav li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-nav a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+      padding: 0.25rem 0;
+    }
+    
+    .program-nav a:hover {
+      color: #4c00b0;
+      font-weight: 500;
+    }
+    
+    .impact-stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+    }
+    
+    .stat-item {
+      flex: 1;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4c00b0;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .program-image {
+        height: 200px;
+      }
+      
+      .impact-stats {
+        flex-direction: column;
+      }
+      
+      .stat-item {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header sticky-top">
+  <div class="topbar d-flex align-items-center accent-background">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:advocates@yadvocates.org">advocates@yadvocates.org</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+263 77 746 9107</span></i>
+        <i class="bi bi-geo-alt-fill d-flex align-items-center ms-4"><span>926 New Zengeza 4, Chitungwiza, Zimbabwe</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/blog/ya-logo.png" height="250%" width="250%" alt="Youth Advocates Logo" class="img-fluid">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- About Us Dropdown -->
+          <li class="dropdown">
+            <a href="about.html"><b>About Us</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Who We Are.html">Who are we</a></li>
+              <li><a href="Key Areas.html">Where we work</a></li>
+              <li><a href="teammm.html">Our Team</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="partners.html"><b>Partnerships</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="partners.html#clients">Partners</a></li>
+              <li><a href="partners.html#get involved">Get involved</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="milestones.html"><span><b>Impact</b></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="helpline.html">Helpline Dashboard</a></li>
+              <li><a href="helpline.html#voluteer">Become a voluteer</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"> 
+            <a href="News&Updates2.html"><b>News & Updates</b><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="News&Updates2.html#blog-posts">Articles</a></li>
+              <li><a href="News&Updates2.html#news-posts">Opportunities</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="mobile-nav-toggle d-xl-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade" style="background: linear-gradient(rgba(76, 0, 176, 0.8), rgba(76, 0, 176, 0.9)), url('assets/img/programs-banner.jpg') center/cover no-repeat;">
+    <div class="container">
+      <h1>Our Programs & Initiatives</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">All Programs</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Impact Stats -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="impact-stats" data-aos="fade-up">
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Active Programs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50k+</span>
+          <span class="stat-label">Youth Impacted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Districts Covered</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Community Partners</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Programs Section -->
+  <section id="all-programs" class="section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Comprehensive Youth Programs</h2>
+        <p>Explore our diverse initiatives designed to empower youth, protect rights, and build sustainable communities across Zimbabwe.</p>
+      </div>
+
+      <div class="row">
+        <!-- Program Navigation Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="program-nav" data-aos="fade-right">
+            <h5>Program Categories</h5>
+            <ul>
+              <li><a href="#vocational-skills-economic-strengthening"><i class="bi bi-briefcase me-2"></i>Economic Empowerment</a></li>
+              <li><a href="#step-up-srhr-access"><i class="bi bi-heart-pulse me-2"></i>SRHR & Health</a></li>
+              <li><a href="#every-hour-matters"><i class="bi bi-clock me-2"></i>Emergency Response</a></li>
+              <li><a href="#positive-norms-violence"><i class="bi bi-shield-check me-2"></i>Child Protection</a></li>
+              <li><a href="#break-the-outbreak"><i class="bi bi-virus me-2"></i>Public Health</a></li>
+              <li><a href="#dreams-program"><i class="bi bi-gender-female me-2"></i>Girls' Empowerment</a></li>
+              <li><a href="#safe-schools"><i class="bi bi-mortarboard me-2"></i>Education & Schools</a></li>
+              <li><a href="#youth-helpline-empowering"><i class="bi bi-telephone me-2"></i>Helpline Services</a></li>
+              <li><a href="#ending-child-marriages-1"><i class="bi bi-people me-2"></i>Child Marriage Prevention</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Program Content -->
+        <div class="col-lg-9">
+          <!-- Program 1: Vocational Skills -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="vocational-skills-economic-strengthening" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Economic Empowerment</span>
+              <h3><i class="fas fa-tools program-icon me-3"></i>Vocational Skills & Economic Strengthening</h3>
+            </div>
+            
+            <img src="assets/img/programs/vocational-training.jpg" alt="Youth participating in vocational training" class="program-image w-100">
+            
+            <div class="stats-badge">2,500+ Youth Trained</div>
+            <div class="stats-badge">85% Employment Rate</div>
+            
+            <p>Youth advocates' vocational skills and economic strengthening programs are comprehensive initiatives designed to break cycles of poverty and unemployment by equipping young people, often from marginalized communities, with both market-relevant skills and the tools to achieve financial autonomy.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-star me-2"></i>Key Components</h5>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <div>Hands-on vocational training in digital literacy, construction, tailoring, and agribusiness</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <div>Soft skills development including communication, teamwork, and work ethic</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <div>Financial literacy education covering budgeting, saving, and debt management</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <div>Access to seed funding, mentorship, and job placement opportunities</div>
+              </div>
+            </div>
+            
+            <p>The overarching goal, championed by the youth advocates who design and often deliver these programs, is not merely job placement but fostering sustainable livelihoods, entrepreneurial mindsets, and the economic resilience that allows participants to build stable futures and contribute to the economic vitality of their communities.</p>
+          </div>
+
+          <!-- Program 2: Step Up SRHR -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="step-up-srhr-access" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">SRHR & Health</span>
+              <h3><i class="fas fa-hand-holding-heart program-icon me-3"></i>Step Up 4 Adolescents SRH Access</h3>
+            </div>
+            
+            <img src="assets/img/programs/srhr-workshop.jpg" alt="SRHR workshop with adolescents" class="program-image w-100">
+            
+            <div class="stats-badge">15,000+ Adolescents Reached</div>
+            <div class="stats-badge">50+ Youth-Friendly Clinics</div>
+            
+            <p>The "Step Up 4 Adolescents SRHR Access" program is a targeted advocacy and implementation initiative focused on dramatically improving Sexual and Reproductive Health (SRH) for adolescents, a group often facing significant barriers to vital information and services.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-bullseye me-2"></i>Program Focus Areas</h5>
+              <div class="highlight-item">
+                <i class="fas fa-comments"></i>
+                <div>Comprehensive sexuality education workshops covering consent and healthy relationships</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-gavel"></i>
+                <div>Advocacy for legal and policy reforms to lower age restrictions for services</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-user-md"></i>
+                <div>Training healthcare providers in non-judgmental, confidential service delivery</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>Digital tools for information dissemination and telemedicine services</div>
+              </div>
+            </div>
+            
+            <p>Youth advocates are central to its methodology, working to dismantle stigma, influence policy, and create adolescent-friendly health environments. The program emphasizes access by establishing youth-friendly clinics and ensuring interventions are inclusive of marginalized groups such as key population youth and those in humanitarian settings.</p>
+          </div>
+
+          <!-- Program 3: Every Hour Matters -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="every-hour-matters" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Emergency Response</span>
+              <h3><i class="fas fa-clock program-icon me-3"></i>Every Hour Matters Campaign</h3>
+            </div>
+            
+            <img src="assets/img/programs/emergency-response.jpg" alt="Emergency response training session" class="program-image w-100">
+            
+            <div class="stats-badge">72-Hour Window</div>
+            <div class="stats-badge">24/7 Support Available</div>
+            
+            <p>Every Hour Matters Campaign provides a concrete example of localized, youth-led action. In Zimbabwe, YAZ implements the campaign by directly confronting the cultural and systemic barriers that delay survivors of sexual violence from accessing critical post-rape care.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-first-aid me-2"></i>Critical Time-Sensitive Services</h5>
+              <div class="highlight-item">
+                <i class="fas fa-pills"></i>
+                <div>Emergency contraception within 120 hours</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-syringe"></i>
+                <div>Post-Exposure Prophylaxis (PEP) for HIV within 72 hours</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-stethoscope"></i>
+                <div>Forensic medical examination and documentation</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-headset"></i>
+                <div>Psychosocial support and counseling</div>
+              </div>
+            </div>
+            
+            <p>Their work is multi-pronged and grounded in community engagement: they conduct intensive peer education and awareness workshops in schools, universities, and local communities to disseminate crucial information about the 72-hour window for emergency contraception and PEP. They leverage digital and traditional media to amplify the "Every Hour Matters" message nationwide, ensuring that vital information on where to seek help is accessible.</p>
+          </div>
+
+          <!-- Program 4: Positive Norms -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="positive-norms-violence" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Child Protection</span>
+              <h3><i class="fas fa-hands-helping program-icon me-3"></i>Building Bridges Through Positive Norms</h3>
+            </div>
+            
+            <img src="assets/img/programs/community-dialogue.jpg" alt="Community dialogue session" class="program-image w-100">
+            
+            <div class="stats-badge">200+ Communities Engaged</div>
+            <div class="stats-badge">Cultural Norms Transformation</div>
+            
+            <p>Building bridges through positive norms to address violence against children is a transformative, community-centered approach that moves beyond punitive measures to fundamentally reshape the social and cultural environment in which children live.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-bridge me-2"></i>Bridge-Building Strategies</h5>
+              <div class="highlight-item">
+                <i class="fas fa-users"></i>
+                <div>Engaging community leaders, parents, teachers, and children in reflective dialogues</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-balance-scale"></i>
+                <div>Collectively redefining positive standards of behavior and community values</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>Creating new social contracts for child protection and non-violent conflict resolution</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-seedling"></i>
+                <div>Empowering communities as their own agents of sustainable change</div>
+              </div>
+            </div>
+            
+            <p>This strategy involves identifying and mobilizing existing protective community values—such as collective responsibility, respect for children, and non-violent conflict resolution—and intentionally strengthening them to displace harmful norms that tacitly accept or perpetuate violence. By shifting the focus from reacting to incidents to proactively cultivating a protective, nurturing ecosystem of positive norms, this approach seeks to prevent violence at its roots.</p>
+          </div>
+
+          <!-- Program 5: Break the Outbreak -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="break-the-outbreak" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Public Health</span>
+              <h3><i class="fas fa-virus-slash program-icon me-3"></i>Break the Outbreak</h3>
+            </div>
+            
+            <img src="assets/img/programs/public-health.jpg" alt="Youth advocates conducting health outreach" class="program-image w-100">
+            
+            <div class="stats-badge">Pandemic Response</div>
+            <div class="stats-badge">Community Mobilization</div>
+            
+            <p>The Break the Outbreak program is a dynamic, youth-led public health initiative where young advocates are mobilized as critical frontline communicators and community mobilizers to combat infectious disease outbreaks, such as COVID-19, cholera, or Ebola.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-broadcast-tower me-2"></i>Communication Channels</h5>
+              <div class="highlight-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>Social media campaigns and digital content creation</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-broadcast-tower"></i>
+                <div>Community radio programs and local language messaging</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-theater-masks"></i>
+                <div>Interactive dramas and peer-to-peer outreach</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-clinic-medical"></i>
+                <div>Facilitating access to hygiene supplies and vaccination sites</div>
+              </div>
+            </div>
+            
+            <p>Recognizing that traditional top-down messaging often fails to reach or resonate with all communities, especially youth, this program trains and deploys young people to "break" the chain of transmission by bridging critical information gaps. By leveraging their trusted positions within their social networks and communities, youth advocates in this program do not just disseminate information—they model preventative behaviors, foster community accountability, and turn their generation into a powerful force for collective action.</p>
+          </div>
+
+          <!-- Program 6: DREAMS -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="dreams-program" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Girls' Empowerment</span>
+              <h3><i class="fas fa-female program-icon me-3"></i>DREAMS Program</h3>
+            </div>
+            
+            <img src="assets/img/programs/girls-empowerment.jpg" alt="Girls participating in DREAMS program" class="program-image w-100">
+            
+            <div class="stats-badge">Determined • Resilient • Empowered</div>
+            <div class="stats-badge">AIDS-Free Generation</div>
+            
+            <p>The DREAMS Program (Determined, Resilient, Empowered, AIDS-free, Mentored, and Safe) is a major global partnership, notably funded by PEPFAR, with youth advocacy woven into its core as both a methodology and an outcome.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-layer-group me-2"></i>Multi-Layered Approach</h5>
+              <div class="highlight-item">
+                <i class="fas fa-user-graduate"></i>
+                <div>Keeping girls in school through scholarships and educational support</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-hand-holding-usd"></i>
+                <div>Economic strengthening through savings clubs and vocational training</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>Violence prevention and creating safe spaces for girls</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-comment-medical"></i>
+                <div>Health education and access to youth-friendly HIV services</div>
+              </div>
+            </div>
+            
+            <p>Youth advocates within DREAMS work to create a protective environment by addressing the root causes of vulnerability. Their roles are multifaceted: they serve as peer mentors and educators, delivering crucial information on HIV prevention, sexual health, and rights in safe, girl-only spaces; they champion economic strengthening by facilitating access to financial literacy training, savings clubs, and vocational skills; and they lead community mobilization efforts to shift harmful gender norms and reduce stigma.</p>
+          </div>
+
+          <!-- Program 7: Safe Schools -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="safe-schools" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Education & Schools</span>
+              <h3><i class="fas fa-school program-icon me-3"></i>Safe Schools for a Healthier Population Initiative</h3>
+            </div>
+            
+            <img src="assets/img/programs/safe-schools.jpg" alt="Students in a safe school environment" class="program-image w-100">
+            
+            <div class="stats-badge">100+ Schools Transformed</div>
+            <div class="stats-badge">Comprehensive Health Education</div>
+            
+            <p>The Safe Schools for a Healthier Population Initiative is a youth advocate-led program that strategically positions schools as foundational hubs for fostering comprehensive health, safety, and well-being for both students and the wider community.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-shield-alt me-2"></i>School Transformation Elements</h5>
+              <div class="highlight-item">
+                <i class="fas fa-faucet"></i>
+                <div>Improved water, sanitation, and hygiene (WASH) facilities</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-heart"></i>
+                <div>Mental health awareness and peer counseling programs</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-book-medical"></i>
+                <div>Comprehensive sexuality education integrated into curriculum</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-user-shield"></i>
+                <div>Bullying prevention and gender-based violence protection systems</div>
+              </div>
+            </div>
+            
+            <p>Recognizing that a healthy, safe, and supportive learning environment is a critical social determinant of long-term population health, youth advocates work to transform schools into protective ecosystems. Their efforts are holistic and action-oriented: they establish peer-led clubs and committees to promote mental health awareness, prevent bullying and gender-based violence, and provide peer counseling; they advocate for and help implement comprehensive sexuality education (CSE) curricula that are age-appropriate and scientifically accurate.</p>
+          </div>
+
+          <!-- Program 8: Youth Helpline -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="youth-helpline-empowering" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Helpline Services</span>
+              <h3><i class="fas fa-phone-alt program-icon me-3"></i>Youth Helpline Empowering Lives</h3>
+            </div>
+            
+            <img src="assets/img/programs/helpline.jpg" alt="Youth helpline operators at work" class="program-image w-100">
+            
+            <div class="stats-badge">24/7 Confidential Support</div>
+            <div class="stats-badge">10,000+ Calls Annually</div>
+            
+            <p>24/7 confidential support, counseling, and referrals via helpline and digital channels to keep young people safe and connected to care.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-life-ring me-2"></i>Helpline Services</h5>
+              <div class="highlight-item">
+                <i class="fas fa-comments"></i>
+                <div>Crisis counseling and psychosocial support</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>Referrals to youth-friendly health services and shelters</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-lock"></i>
+                <div>Confidential and anonymous support for sensitive issues</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div>Digital counseling via WhatsApp, SMS, and social media</div>
+              </div>
+            </div>
+            
+            <p>The Youth Helpline Empowering Lives Project, implemented by Youth Advocates Zimbabwe (YA) in Seke District, has delivered measurable improvements in adolescent health and well-being throughout the years. With support from Egmont Trust, the project provided youth-friendly sexual and reproductive health (SRH) services, HIV prevention, psychosocial support, gender norms transformation, and economic empowerment opportunities. The project demonstrated resilience, adaptability, and strong performance across service delivery, mentorship, and community engagement.</p>
+          </div>
+
+          <!-- Program 9: Child Marriage 1 -->
+          <div class="program-card p-4 border rounded-3 h-100 shadow-sm" id="ending-child-marriages-1" data-aos="fade-up">
+            <div class="program-header">
+              <span class="program-category">Child Marriage Prevention</span>
+              <h3><i class="fas fa-ring program-icon me-3"></i>Ending Child Marriages; Transforming Futures</h3>
+            </div>
+            
+            <img src="assets/img/programs/child-marriage-prevention.jpg" alt="Girls' education empowerment session" class="program-image w-100">
+            
+            <div class="stats-badge">1,000+ Girls Protected</div>
+            <div class="stats-badge">Community-Led Prevention</div>
+            
+            <p>The "Ending Child Marriages; Transforming Futures" program led by youth advocates is a powerful, multi-faceted movement that tackles the root causes of child marriage while empowering girls to reclaim their futures.</p>
+            
+            <div class="program-highlights">
+              <h5><i class="fas fa-chess-board me-2"></i>Multi-Pronged Strategy</h5>
+              <div class="highlight-item">
+                <i class="fas fa-users"></i>
+                <div>Community mobilization and dialogue with traditional leaders</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-gavel"></i>
+                <div>Legal advocacy and enforcement of marriage age laws</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-graduation-cap"></i>
+                <div>Educational support and scholarships for at-risk girls</div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-briefcase"></i>
+                <div>Economic alternatives through vocational training</div>
+              </div>
+            </div>
+            
+            <p>Youth advocates, often survivors or peers from affected communities, drive change through direct action and systemic advocacy. Their work includes community mobilization and dialogue, where they engage parents, traditional leaders, and religious figures in conversations to shift deep-seated norms that prioritize early marriage over education, using data and personal testimonies to highlight the harms.</p>
+          </div>
+
+          <!-- Add more program cards following the same pattern -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" class="footer dark-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Youth Advocates</span>
+        </a>
+        <p>Youth Advocates is a youth-led organisation working to advance adolescents' rights and amplify their voices where it matters. Youth Advocates continues building on extensive experience leading youth led research projects within the development field, ideally pioneering programs partnering with the local communities.</p>
+        <div class="social-links d-flex mt-4">
+          <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/youthadvocates/?hl=en" class="instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="programs.html">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Our Pride</h4>
+        <ul>
+          <li><a href="">Youth Engagement</a></li>
+          <li><a href="">393 - Youth Helpline</a></li>
+          <li><a href="">Women Empowerment</a></li>
+          <li><a href="">YA Adolescents clinic</a></li>
+          <li><a href="">YA Leadership Program</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>926 New Zengeza 4</p>
+        <p>Chitungwiza</p>
+        <p>Zimbabwe</p>
+        <p class="mt-4"><strong>Phone:</strong> <span>+263 77 746 9107</span></p>
+        <p><strong>Email:</strong> <span>advocates@yadvoctes.org</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Youth Advocates</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed with 💕 by <a href="teammm.html">YAZ Web Team</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

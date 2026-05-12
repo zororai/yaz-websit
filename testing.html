@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Our Team - Youth Advocates Zimbabwe</title>
+  <meta name="description" content="Meet the passionate youth advocates driving change in Zimbabwe. Our dedicated team of professionals and volunteers working for adolescent rights and empowerment.">
+  <meta name="keywords" content="youth advocates team, Zimbabwe youth leaders, advocacy team, YAZ staff">
+
+  <!-- Favicons -->
+  <link href="assets/img/ya-logo.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Team Page Custom Styles */
+    .team-hero {
+      background: linear-gradient(rgba(76, 0, 176, 0.85), rgba(76, 0, 176, 0.95)), url('assets/img/team/team-hero-bg.jpg') center/cover no-repeat;
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    
+    .team-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .team-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+    
+    .team-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat-box {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+    
+    /* Enhanced Team Member Cards with Hover Overlay */
+    .team-member {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      height: 100%;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(76, 0, 176, 0.2);
+    }
+    
+    .member-img-container {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .member-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .team-member:hover .member-img {
+      transform: scale(1.1);
+    }
+    
+    /* Image Overlay Effect */
+    .member-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(76, 0, 176, 0) 0%, rgba(76, 0, 176, 0.9) 100%);
+      opacity: 0;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      color: white;
+    }
+    
+    .team-member:hover .member-overlay {
+      opacity: 1;
+    }
+    
+    .overlay-content {
+      transform: translateY(20px);
+      transition: transform 0.4s ease;
+      opacity: 0;
+    }
+    
+    .team-member:hover .overlay-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .overlay-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    
+    .overlay-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .overlay-bio {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.85);
+      max-height: 100px;
+      overflow: hidden;
+    }
+    
+    .overlay-social {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .overlay-social a {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .overlay-social a:hover {
+      background: white;
+      color: #4c00b0;
+      transform: translateY(-3px);
+    }
+    
+    /* Regular Member Info (Shows when not hovering) */
+    .member-info {
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover .member-info {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    
+    .member-role {
+      color: #4c00b0;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .member-bio {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-height: 80px;
+      overflow: hidden;
+    }
+    
+    .member-social {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .member-social a {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .member-social a:hover {
+      background: #4c00b0;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Team Categories */
+    .team-category {
+      margin-bottom: 4rem;
+    }
+    
+    .category-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .category-title h2 {
+      font-size: 2.2rem;
+      color: #4c00b0;
+      display: inline-block;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    
+    .category-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #4c00b0;
+    }
+    
+    .category-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+    
+    /* Leadership Team Special Styling */
+    .leadership-team .team-member {
+      border-top: 4px solid #4c00b0;
+    }
+    
+    .leadership-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #4c00b0;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 10;
+    }
+    
+    /* Department Tags */
+    .department-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(76, 0, 176, 0.1);
+      color: #4c00b0;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    /* Team Values Section */
+    .team-values {
+      background: #f8f9fa;
+      padding: 80px 0;
+      margin: 4rem 0;
+    }
+    
+    .value-card {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(76, 0, 176, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #4c00b0;
+      font-size: 1.8rem;
+    }
+    
+    .value-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .value-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* Join Team CTA */
+    .join-team-cta {
+      background: linear-gradient(135deg, #4c00b0 0%, #6a11cb 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+      border-radius: 15px;
+      margin: 4rem 0;
+    }
+    
+    .join-team-cta h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .join-team-cta p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-outline-light {
+      border: 2px solid white;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-light:hover {
+      background: white;
+      color: #4c00b0;
+    }
+    
+    .btn-light {
+      background: white;
+      color: #4c00b0;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-light:hover {
+      background: #f8f9fa;
+      transform: translateY(-3px);
+    }
+    
+    /* Filter Navigation */
+    .team-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 3rem;
+    }
+    
+    .filter-btn {
+      padding: 8px 20px;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 25px;
+      font-weight: 500;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: #4c00b0;
+      color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .team-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .team-stats {
+        gap: 2rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .member-img-container {
+        height: 250px;
+      }
+      
+      .join-team-cta h3 {
+        font-size: 1.8rem;
+      }
+      
+      .category-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .overlay-content {
+        padding: 15px;
+      }
+      
+      .overlay-name {
+        font-size: 1.2rem;
+      }
+      
+      .overlay-bio {
+        font-size: 0.8rem;
+        max-height: 80px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .team-hero {
+        padding: 80px 0 60px;
+      }
+      
+      .team-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .team-filter {
+        gap: 5px;
+      }
+      
+      .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-outline-light, .btn-light {
+        width: 100%;
+        max-width: 250px;
+      }
+      
+      .member-img-container {
+        height: 220px;
+      }
+    }
+    
+    /* Mobile touch optimization */
+    @media (hover: none) and (pointer: coarse) {
+      .member-overlay {
+        opacity: 1;
+        background: linear-gradient(to bottom, rgba(76, 0, 176, 0.3) 0%, rgba(76, 0, 176, 0.8) 100%);
+      }
+      
+      .overlay-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .team-member:hover .member-info {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+<!-- Header (Same as your other pages) -->
+<header id="header" class="header sticky-top">
+  <div class="topbar d-flex align-items-center accent-background">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:advocates@yadvocates.org">advocates@yadvocates.org</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+263 77 746 9107</span></i>
+        <i class="bi bi-geo-alt-fill d-flex align-items-center ms-4"><span>926 New Zengeza 4, Chitungwiza, Zimbabwe</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/blog/ya-logo.png" height="250%" width="250%" alt="Youth Advocates Logo" class="img-fluid">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li class="dropdown">
+            <a href="about.html"><b>About Us</b> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="Who We Are.html">Who are we</a></li>
+              <li><a href="Key Areas.html">Where we work</a></li>
+              <li><a href="teammm.html">Our Team</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown">
+            <a href="partners.html"><b>Partnerships</b> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="partners.html#clients">Partners</a></li>
+              <li><a href="partners.html#get involved">Get involved</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="milestones.html"><span><b>Impact</b></span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="helpline.html">Helpline Dashboard</a></li>
+              <li><a href="helpline.html#voluteer">Become a volunteer</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"> 
+            <a href="News&Updates2.html"><b>News & Updates</b><i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#blog-posts">Articles</a></li>
+              <li><a href="#news-posts">Opportunities</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="mobile-nav-toggle d-xl-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  
+  <!-- Hero Section --
+  <section-- class="team-hero" data-aos="fade-down">
+    <div class="container">
+      <h1>Meet Our Team</h1>
+      <p>Passionate youth advocates dedicated to advancing adolescent rights, driving community change, and building a brighter future for Zimbabwe's youth.</p>
+      
+      <div class="team-stats" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-box">
+          <span class="stat-number" data-count="50">0</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" data-count="8">0</span>
+          <span class="stat-label">Departments</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" data-count="150">0</span>
+          <span class="stat-label">Volunteers</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" data-count="10">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section-->
+<section class="hero" style="text-align: center;">
+    <div class="container" style="text-align: center;">
+        <h1><b>Meet Our Team</b> <br>Passionate individuals dedicated to empowering youth and creating positive change in our communities.</h1>
+        <p > </p>
+    </div>
+</section>
+  <!-- Team Filter >
+  
+  <section class="section pt-4">
+    <div class="container">
+      <div class="team-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All Team</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+        <button class="filter-btn" data-filter="programs">Programs</button>
+        <button class="filter-btn" data-filter="advocacy">Advocacy</button>
+        <button class="filter-btn" data-filter="operations">Operations</button>
+        <button class="filter-btn" data-filter="communications">Communications</button>
+        <button class="filter-btn" data-filter="volunteers">Youth Volunteers</button>
+      </div>
+    </div>
+  </section-->
+
+  <!-- Leadership Team -->
+  <section class="section team-category leadership-team">
+    <div class="container">
+      <div class="category-title" data-aos="fade-up">
+        <h2>The Team</h2>
+        <p class="category-subtitle">Visionary leaders guiding our mission and strategy</p>
+      </div>
+      
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <!-- Team Member 1 - Executive Director -->
+        <div class="col-lg-4 col-md-6" data-category="leadership">
+          <div class="team-member">
+            <div class="member-img-container">
+              <div class="leadership-badge">Executive Director</div>
+              <img src="assets/img/team/executive-director.jpg" alt="Tendai Moyo - Executive Director" class="member-img">
+              
+              <!-- Hover Overlay -->
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Tendai Moyo</h3>
+                  <span class="overlay-role">Executive Director</span>
+                  <p class="overlay-bio">Tendai brings 12+ years of experience in youth development and organizational leadership. She holds a Master's in Development Studies and has been instrumental in shaping national youth policies in Zimbabwe. Her passion for adolescent rights drives our strategic vision.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:tendai@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Regular Info (shown when not hovering) -->
+            <div class="member-info">
+              <span class="department-tag">Leadership</span>
+              <h3 class="member-name">Tendai Moyo</h3>
+              <span class="member-role">Executive Director</span>
+              <p class="member-bio">With over 12 years in youth development, Tendai provides strategic leadership and vision for Youth Advocates Zimbabwe. Passionate about adolescent rights and policy reform.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:tendai@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 - Programs Director -->
+        <div class="col-lg-4 col-md-6" data-category="leadership">
+          <div class="team-member">
+            <div class="member-img-container">
+              <div class="leadership-badge">Programs Director</div>
+              <img src="assets/img/team/programs-director.jpg" alt="Chido Muchena - Programs Director" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Chido Muchena</h3>
+                  <span class="overlay-role">Programs Director</span>
+                  <p class="overlay-bio">Chido has 8 years of experience designing and implementing youth programs across Zimbabwe. She specializes in SRHR advocacy and has trained over 500 peer educators. Holds a degree in Public Health and Social Work.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:chido@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Leadership • Programs</span>
+              <h3 class="member-name">Chido Muchena</h3>
+              <span class="member-role">Programs Director</span>
+              <p class="member-bio">Leads program design and implementation across all our initiatives. Specializes in SRHR advocacy and community-based interventions for adolescent girls.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:chido@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 - Finance Director -->
+        <div class="col-lg-4 col-md-6" data-category="leadership">
+          <div class="team-member">
+            <div class="member-img-container">
+              <div class="leadership-badge">Finance Director</div>
+              <img src="assets/img/team/finance-director.jpg" alt="Takunda Ndlovu - Finance Director" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Takunda Ndlovu</h3>
+                  <span class="overlay-role">Finance & Operations Director</span>
+                  <p class="overlay-bio">Certified accountant with 10+ years in NGO financial management. Takunda has successfully managed grants totaling over $5M from international donors. Expertise in financial systems, compliance, and operational efficiency.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:takunda@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Leadership • Operations</span>
+              <h3 class="member-name">Takunda Ndlovu</h3>
+              <span class="member-role">Finance & Operations Director</span>
+              <p class="member-bio">Manages organizational finances, grants, and operational systems. Ensures transparency and accountability in all our financial processes.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:takunda@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Team -->
+  <section class="section team-category">
+    <div class="container">
+      <div class="category-title" data-aos="fade-up">
+        <h2>Programs Team</h2>
+        <p class="category-subtitle">Experts implementing our core initiatives on the ground</p>
+      </div>
+      
+      <div class="row">
+        <!-- Program Manager 1 -->
+        <div class="col-lg-3 col-md-6" data-category="programs" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/srhr-manager.jpg" alt="Rumbidzai Chikwava - SRHR Manager" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Rumbidzai Chikwava</h3>
+                  <span class="overlay-role">SRHR Program Manager</span>
+                  <p class="overlay-bio">Registered nurse with specialization in adolescent health. Has established 15 youth-friendly clinics across Zimbabwe. Fluent in Shona, Ndebele, and English. Passionate about comprehensive sexuality education.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:rumbidzai@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Programs • SRHR</span>
+              <h3 class="member-name">Rumbidzai Chikwava</h3>
+              <span class="member-role">SRHR Program Manager</span>
+              <p class="member-bio">Leads our sexual and reproductive health rights initiatives, including youth-friendly services and comprehensive sexuality education.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:rumbidzai@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Program Manager 2 -->
+        <div class="col-lg-3 col-md-6" data-category="programs" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/economic-empowerment.jpg" alt="Tinashe Banda - Economic Empowerment Manager" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Tinashe Banda</h3>
+                  <span class="overlay-role">Economic Empowerment Manager</span>
+                  <p class="overlay-bio">Entrepreneurship expert with background in vocational training. Has helped 300+ youth start small businesses. Certified in business development and financial literacy training. Focus on sustainable livelihoods.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:tinashe@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Programs • Livelihoods</span>
+              <h3 class="member-name">Tinashe Banda</h3>
+              <span class="member-role">Economic Empowerment Manager</span>
+              <p class="member-bio">Oversees vocational training and economic strengthening programs for out-of-school youth and young women.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:tinashe@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Program Manager 3 -->
+        <div class="col-lg-3 col-md-6" data-category="programs" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/child-protection.jpg" alt="Nyasha Marime - Child Protection Manager" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Nyasha Marime</h3>
+                  <span class="overlay-role">Child Protection Manager</span>
+                  <p class="overlay-bio">Social worker with 7 years in child protection. Has prevented 50+ child marriages through community interventions. Trained 200 community child protection volunteers. Advocate for children's rights.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:nyasha@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Programs • Child Protection</span>
+              <h3 class="member-name">Nyasha Marime</h3>
+              <span class="member-role">Child Protection Manager</span>
+              <p class="member-bio">Leads initiatives to end child marriage and protect children from violence through community-based approaches.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:nyasha@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Program Manager 4 -->
+        <div class="col-lg-3 col-md-6" data-category="programs" data-aos="fade-up" data-aos-delay="400">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/helpline-manager.jpg" alt="Farai Chigondo - Helpline Manager" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Farai Chigondo</h3>
+                  <span class="overlay-role">Youth Helpline Manager</span>
+                  <p class="overlay-bio">Counselling psychologist managing our 24/7 helpline. Has trained 30 helpline counselors. Handles crisis intervention and mental health support. Strong background in adolescent psychology.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:farai@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Programs • Helpline</span>
+              <h3 class="member-name">Farai Chigondo</h3>
+              <span class="member-role">Youth Helpline Manager</span>
+              <p class="member-bio">Manages our 24/7 youth helpline, ensuring confidential support and referrals for adolescents in need.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:farai@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advocacy & Policy Team -->
+  <section class="section team-category">
+    <div class="container">
+      <div class="category-title" data-aos="fade-up">
+        <h2>Advocacy & Policy Team</h2>
+        <p class="category-subtitle">Driving systemic change through research, policy engagement, and youth mobilization</p>
+      </div>
+      
+      <div class="row">
+        <!-- Advocacy Specialist 1 -->
+        <div class="col-lg-4 col-md-6" data-category="advocacy" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/policy-advocate.jpg" alt="Kudzai Muchenje - Policy Advocate" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Kudzai Muchenje</h3>
+                  <span class="overlay-role">Senior Policy Advocate</span>
+                  <p class="overlay-bio">Law graduate specializing in human rights law. Has contributed to 5 national policy reforms affecting youth. Excellent negotiator and public speaker. Represents youth voices in parliamentary committees.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:kudzai@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Advocacy • Policy</span>
+              <h3 class="member-name">Kudzai Muchenje</h3>
+              <span class="member-role">Senior Policy Advocate</span>
+              <p class="member-bio">Engages with government stakeholders and leads campaigns for adolescent-friendly policies at national and local levels.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:kudzai@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Advocacy Specialist 2 -->
+        <div class="col-lg-4 col-md-6" data-category="advocacy" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/research-specialist.jpg" alt="Chengetai Dube - Research Specialist" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Chengetai Dube</h3>
+                  <span class="overlay-role">Research & M&E Specialist</span>
+                  <p class="overlay-bio">Statistics graduate with expertise in qualitative and quantitative research. Manages our youth-led research projects. Produces evidence-based reports for advocacy. Ensures data-driven programming.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:chengetai@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Advocacy • Research</span>
+              <h3 class="member-name">Chengetai Dube</h3>
+              <span class="member-role">Research & M&E Specialist</span>
+              <p class="member-bio">Conducts youth-led research and manages monitoring & evaluation systems to measure our impact and inform advocacy.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:chengetai@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Advocacy Specialist 3 -->
+        <div class="col-lg-4 col-md-6" data-category="advocacy" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/youth-mobilizer.jpg" alt="Tafadzwa Sibanda - Youth Mobilizer" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Tafadzwa Sibanda</h3>
+                  <span class="overlay-role">Youth Mobilization Coordinator</span>
+                  <p class="overlay-bio">Community organizer with network across 8 provinces. Has mobilized 5,000+ youth for advocacy campaigns. Expert in digital and grassroots mobilization. Passionate about youth leadership development.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:tafadzwa@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Advocacy • Mobilization</span>
+              <h3 class="member-name">Tafadzwa Sibanda</h3>
+              <span class="member-role">Youth Mobilization Coordinator</span>
+              <p class="member-bio">Builds and supports youth networks across Zimbabwe, empowering young people to become advocates in their communities.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:tafadzwa@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youth Volunteers -->
+  <section class="section team-category">
+    <div class="container">
+      <div class="category-title" data-aos="fade-up">
+        <h2>Youth Volunteers & Peer Educators</h2>
+        <p class="category-subtitle">Young leaders driving change in their communities</p>
+      </div>
+      
+      <div class="row">
+        <!-- Volunteer 1 -->
+        <div class="col-lg-3 col-md-6" data-category="volunteers" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/peer-educator1.jpg" alt="Grace Makoni - Peer Educator" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Grace Makoni</h3>
+                  <span class="overlay-role">SRHR Peer Educator</span>
+                  <p class="overlay-bio">Medical student at University of Zimbabwe. Provides SRHR education in high schools and universities. Fluent in 3 local languages. Aspiring public health specialist focusing on adolescent health.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Volunteer • Peer Educator</span>
+              <h3 class="member-name">Grace Makoni</h3>
+              <span class="member-role">SRHR Peer Educator</span>
+              <p class="member-bio">University student providing SRHR information to peers in tertiary institutions and high schools in Harare.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Volunteer 2 -->
+        <div class="col-lg-3 col-md-6" data-category="volunteers" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/peer-educator2.jpg" alt="Blessing Nkomo - Community Volunteer" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Blessing Nkomo</h3>
+                  <span class="overlay-role">Community Volunteer</span>
+                  <p class="overlay-bio">Youth leader from rural Mashonaland East. Has prevented 15 child marriages through community dialogue. Trusted mediator between traditional leaders and youth. Studying community development.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Volunteer • Community Mobilizer</span>
+              <h3 class="member-name">Blessing Nkomo</h3>
+              <span class="member-role">Community Volunteer</span>
+              <p class="member-bio">Leads community dialogues on ending child marriage in rural Mashonaland East province.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Volunteer 3 -->
+        <div class="col-lg-3 col-md-6" data-category="volunteers" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/peer-educator3.jpg" alt="Tatenda Chiweshe - Helpline Volunteer" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Tatenda Chiweshe</h3>
+                  <span class="overlay-role">Helpline Volunteer</span>
+                  <p class="overlay-bio">Psychology student specializing in adolescent mental health. Provides counseling on our helpline. Certified in crisis intervention. Passionate about mental health awareness among youth.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:tatenda@yadvocates.org"><i class="far fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Volunteer • Helpline Counselor</span>
+              <h3 class="member-name">Tatenda Chiweshe</h3>
+              <span class="member-role">Helpline Volunteer</span>
+              <p class="member-bio">Psychology student providing confidential counseling and support through our youth helpline.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:tatenda@yadvocates.org"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Volunteer 4 -->
+        <div class="col-lg-3 col-md-6" data-category="volunteers" data-aos="fade-up" data-aos-delay="400">
+          <div class="team-member">
+            <div class="member-img-container">
+              <img src="assets/img/team/peer-educator4.jpg" alt="Anesu Maphosa - Digital Advocate" class="member-img">
+              
+              <div class="member-overlay">
+                <div class="overlay-content">
+                  <h3 class="overlay-name">Anesu Maphosa</h3>
+                  <span class="overlay-role">Digital Content Creator</span>
+                  <p class="overlay-bio">Media studies graduate with 20k+ social media followers. Creates engaging content on SRHR and youth rights. Manages our TikTok and Instagram campaigns. Award-winning digital storyteller.</p>
+                  <div class="overlay-social">
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-info">
+              <span class="department-tag">Volunteer • Digital Advocacy</span>
+              <h3 class="member-name">Anesu Maphosa</h3>
+              <span class="member-role">Digital Content Creator</span>
+              <p class="member-bio">Creates engaging social media content to raise awareness about adolescent rights and available services.</p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Values Section -->
+  <section class="team-values">
+    <div class="container">
+      <div class="category-title" data-aos="fade-up">
+        <h2>Our Team Values</h2>
+        <p class="category-subtitle">Principles that guide our work and team culture</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4 class="value-title">Youth-Centered</h4>
+            <p class="value-description">We prioritize the needs, voices, and leadership of young people in all our work and decision-making processes.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h4 class="value-title">Collaborative</h4>
+            <p class="value-description">We believe in the power of partnership and work closely with communities, government, and other stakeholders.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4 class="value-title">Accountable</h4>
+            <p class="value-description">We are transparent in our work and accountable to the communities we serve and our partners.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4 class="value-title">Innovative</h4>
+            <p class="value-description">We embrace creative solutions and adapt our approaches to meet evolving challenges and opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Team CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="join-team-cta" data-aos="fade-up">
+        <h3>Join Our Movement</h3>
+        <p>We're always looking for passionate individuals who want to make a difference in the lives of Zimbabwe's youth. Whether as staff, volunteers, or interns, there's a place for you in our team.</p>
+        <div class="cta-buttons">
+          <a href="careers.html" class="btn btn-light">View Open Positions</a>
+          <a href="volunteer.html" class="btn btn-outline-light">Become a Volunteer</a>
+          <a href="internships.html" class="btn btn-outline-light">Internship Opportunities</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer (Same as your other pages) -->
+<footer id="footer" class="footer dark-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Youth Advocates</span>
+        </a>
+        <p>Youth Advocates is a youth-led organisation working to advance adolescents' rights and amplify their voices where it matters. Youth Advocates continues building on extensive experience leading youth led research projects within the development field, ideally pioneering programs partnering with the local communities.</p>
+        <div class="social-links d-flex mt-4">
+          <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/youthadvocates/?hl=en" class="instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="programs.html">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Our Pride</h4>
+        <ul>
+          <li><a href="">Youth Engagement</a></li>
+          <li><a href="">393 - Youth Helpline</a></li>
+          <li><a href="">Women Empowerment</a></li>
+          <li><a href="">YA Adolescents clinic</a></li>
+          <li><a href="">YA Leadership Program</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>926 New Zengeza 4</p>
+        <p>Chitungwiza</p>
+        <p>Zimbabwe</p>
+        <p class="mt-4"><strong>Phone:</strong> <span>+263 77 746 9107</span></p>
+        <p><strong>Email:</strong> <span>advocates@yadvoctes.org</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Youth Advocates</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed with 💕 by <a href="teammm.html">YAZ Web Team</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<script>
+  // Team Filter Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Filter team members
+        teamMembers.forEach(member => {
+          const memberCategory = member.parentElement.getAttribute('data-category');
+          
+          if (filterValue === 'all' || filterValue === memberCategory) {
+            member.parentElement.style.display = 'block';
+            
+            // Add animation
+            member.style.opacity = '0';
+            setTimeout(() => {
+              member.style.opacity = '1';
+              member.style.transition = 'opacity 0.3s ease';
+            }, 50);
+          } else {
+            member.parentElement.style.display = 'none';
+          }
+        });
+        
+        // Show/hide category titles based on filter
+        const categoryTitles = document.querySelectorAll('.category-title');
+        categoryTitles.forEach(title => {
+          if (filterValue === 'all') {
+            title.parentElement.style.display = 'block';
+          } else {
+            const categorySection = title.closest('.team-category');
+            if (categorySection.classList.contains(filterValue + '-team') || 
+                filterValue === 'volunteers' && categorySection.querySelector('[data-category="volunteers"]')) {
+              categorySection.style.display = 'block';
+            } else {
+              categorySection.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+    
+    // Animated counter for stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumber = entry.target;
+          const target = parseInt(statNumber.getAttribute('data-count'));
+          const duration = 2000; // 2 seconds
+          const increment = target / (duration / 16); // 60fps
+          let current = 0;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              statNumber.textContent = target;
+              clearInterval(timer);
+            } else {
+              statNumber.textContent = Math.floor(current);
+            }
+          }, 16);
+          
+          observer.unobserve(statNumber);
+        }
+      });
+    }, observerOptions);
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+    
+    // Initialize AOS animations
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
+    
+    // Mobile touch optimization for overlay
+    if ('ontouchstart' in window) {
+      // For touch devices, show overlay by default
+      document.querySelectorAll('.member-overlay').forEach(overlay => {
+        overlay.style.opacity = '0.9';
+        overlay.style.background = 'linear-gradient(to bottom, rgba(76, 0, 176, 0.7) 0%, rgba(76, 0, 176, 0.95) 100%)';
+      });
+      
+      document.querySelectorAll('.overlay-content').forEach(content => {
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+      });
+    }
+  });
+</script>
+
+</body>
+
+</html>

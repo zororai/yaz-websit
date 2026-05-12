@@ -1,0 +1,818 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Youth Advocates</title> 
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!-- Favicons -->
+  <link href="assets/img/ya-logo.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6b1ee6;
+            --secondary: #e45b00;
+            --accent: #00a8ff;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section with Video Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: transparent;
+        }
+        
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 46, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+        
+        .btn-get-started {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-get-started:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <style>
+         .hero {
+            background: url('assets/img/team/team.jpeg')  center no-repeat;
+            background-size: contain;
+            color: rgb(240, 238, 238);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-hierarchy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .level::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .level:first-child::before {
+            display: none;
+        }
+
+        .level-title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .level-title h3 {
+            display: inline-block;
+            background-color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+        }
+
+        .member {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin: 0 15px 30px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+
+        .member-image i {
+            font-size: 60px;
+            color: var(--primary);
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .connector {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: var(--primary);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+   <main class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+      <div class="topbar d-flex align-items-center accent-background">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+          <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">advocates@yadvocates.org</a></i>
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>+263 77 746 9107</span></i>
+            <i class="bi bi-geo-alt-fill d-flex align-items-center ms-4"><span>926 New Zengeza 4, Chitungwiza, Zimbabwe</span></i>
+          </div>
+          <div class="social-links d-none d-md-flex align-items-center">
+            <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div> 
+        <div class="branding d-flex align-items-center">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Placeholder for logo -->
+                    <!--div style="width: 40px; height: 40px; background-color: #4c00b0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">s</!--div>
+                    <h1-- class="sitename" style="color: #4c00b0;">YouthAdvocates</h1-->
+                    <img src="assets/img/blog/ya-logo.png" height="250%" width="250%" alt="Youth Advocates Logo" class="img-fluid">
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <!-- About Us Dropdown -->
+                        <li class="dropdown">
+                            <a href="about.html"><b>About Us</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="Who We Are.html">Who are we</a></li>
+                                <li><a href="Key Areas.html">Where we work</a></li>
+                                <li><a href="teammm.html">Our Team</a></li>
+                                
+                                <!--li><a href="partners.html">Partners</a></!--li-->
+                            </ul>
+                        </li>
+                        
+
+                        <li class="dropdown">
+                            <a href="partners.html"><b>Partnerships</b> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="partners.html#clients">Partners</a></li>
+                                <li><a href="partners.html#get involved">Get involved</a></li>
+                                <!--li><a href="staff-directory.html">Staff Directory</a></!--li-->
+                                <!--li><a href="feedback.html">Feedback</a><--/li-->
+                            </ul>
+                        </li>
+
+                            <li class="dropdown">
+                            <a href="milestones.html"><span><b>Impact</b></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="programs.html">Programs</a></li>
+                                <li><a href="helpline.html">Helpline Dashboard</a></li>
+                                <li><a href="helpline.html#voluteer">Become a voluteer</a></li>
+                                <!--li><a href="special-events.html">Special Events</a></!--li-->
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"> 
+                          <a href="News&Updates2.html"><b>News & Updates</b><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                          <ul>
+                            <li><a href="News&Updates2.html#blog-posts">Articles</a></li>
+                            <li><a href="News&Updates2.html#news-posts">Opportunities</a></li>
+                          </ul>
+                        </li>
+                           
+          
+                    </ul>
+                    <button class="mobile-nav-toggle d-xl-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div> 
+    </header> 
+
+
+
+     <section class="hero">
+        <div class="container">
+            <h1><b>Meet Our Team</b></h1>
+            <p>Passionate individuals dedicated to empowering youth and creating positive change in our communities.</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Organizational Structure</h2>
+                <p><b>At Youth Advocates, we believe in a collaborative approach where every team member plays a vital role in achieving our mission.</b></p>
+            </div>
+
+            <div class="team-hierarchy">
+                <!-- Management Level -->
+                <div class="level">
+                    <div class="level-title">
+                        <h3>Management</h3>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/Tate.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Tatenda Songore</h3>
+                        <p class="member-position">Executive Director</p>
+                        <p class="member-bio">Leads strategic direction and oversees all organizational operations with 15+ years of experience in youth development.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/Noku.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Nokuphiwa Moyo</h3>
+                        <p class="member-position">Program Director</p>
+                        <p class="member-bio">Manages program development and implementation, ensuring alignment with our mission and goals.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/Tale.jpg" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Talent Mubonesi</h3>
+                        <p class="member-position">Finance & Operations Director</p>
+                        <p class="member-bio">Oversees financial management, HR, and organizational infrastructure to support our mission.</p>
+                    </div>
+                </div>
+
+                <!-- Programs Officers Level -->
+                <div class="level">
+                    <div class="level-title">
+                        <h3>Programs Officers</h3>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                            <img src="assets/img/team/victor.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Victor Furamera</h3>
+                        <p class="member-position">Programs Officer</p>
+                        <p class="member-bio">Coordinates youth leadership programs and mentorship initiatives across multiple communities.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/lameck.jpeg" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">lameck Muzangaza JR</h3>
+                        <p class="member-position">Programs Officer - Education</p>
+                        <p class="member-bio">Develops and implements educational programs focused on skill-building and academic support.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/caro.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Caroline Matsekeza</h3>
+                        <p class="member-position">Senior Programs Officer - Outreach</p>
+                        <p class="member-bio">Leads community engagement efforts and builds partnerships with local organizations.</p>
+                    </div>
+                     <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/gigi.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Gracious Mayingire</h3>
+                        <p class="member-position">Communications Manager</p>
+                        <p class="member-bio">Leads all external and internal communications, including social media and public relations.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/emmanuel.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Emmanuel Bvurume</h3>
+                        <p class="member-position">Business Development and Partnership Officer</p>
+                        <p class="member-bio">Leads all external and internal communications, including social media and public relations.</p>
+                    </div>
+                </div>
+
+                <!-- Communication Team Level -->
+                <div class="level">
+                    <div class="level-title">
+                        <h3>Communication Team</h3>
+                    </div>
+                    <!--div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="member-name">Gracious Mayingire</h3>
+                        <p class="member-position">Communications Manager</p>
+                        <p class="member-bio">Leads all external and internal communications, including social media and public relations.</p>
+                    </!--div-->
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/diva dolar.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">David Matavire</h3>
+                        <p class="member-position">Content Specialist</p>
+                        <p class="member-bio">Creates engaging content for our website, newsletters, and social media platforms.</p>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/thando.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Thando Madondo</h3>
+                        <p class="member-position">Graphic Designer</p>
+                        <p class="member-bio">Designs visual materials that communicate our mission and engage our audience.</p>
+                    </div>
+                </div>
+
+                <!-- Helpline Department Level -->
+                <div class="level">
+                    <div class="level-title">
+                        <h3>Helpline Department</h3>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/mercy.webp" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Mercy Nkomo</h3>
+                        <p class="member-position">Helpline Coordinator</p>
+                        <p class="member-bio">Manages our youth helpline services and ensures youth receive timely support and resources.</p>
+                    </div>
+                </div>
+
+                <!-- IT Department Level -->
+                <div class="level">
+                    <div class="level-title">
+                        <h3>IT Department</h3>
+                    </div>
+                    <div class="member">
+                        <div class="member-image">
+                            <i class="fas fa-user"></i>
+                             <img src="assets/img/team/royal.png" alt="Youth Advocates Background"style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 class="member-name">Royal Kazembe</h3>
+                        <p class="member-position">IT Specialist</p>
+                        <p class="member-bio">Maintains our technical infrastructure and supports digital initiatives across the organization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <h4>Let's Talk. Let's get moving.</h4>
+        <p>Want to partner with us or send a shout out? Have any inquiries? Get in touch. We are open all week and are readily available to answer your questions.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="50">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-5">
+
+                <div class="info-wrap" style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="60">
+                        <i class="bi bi-geo-alt flex-shrink-0" style="color: #a13dcf; font-size: 1.2rem; margin-right: 15px;"></i>
+                        <div>
+                            <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 5px;">Address</h3>
+                            <p style="color: #7d756c;">926 New Zengeza 4, Chitungwiza, Zimbabwe</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="70">
+                        <i class="bi bi-telephone flex-shrink-0" style="color: #a13dcf; font-size: 1.2rem; margin-right: 15px;"></i>
+                        <div>
+                            <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 5px;">Call Us</h3>
+                            <p style="color: #7d756c;">+263 77 746 9107</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="80">
+                        <i class="bi bi-envelope flex-shrink-0" style="color: #a13dcf; font-size: 1.2rem; margin-right: 15px;"></i>
+                        <div>
+                            <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 5px;">Email Us</h3>
+                            <p style="color: #7d756c;">advocates@yadvocates.org</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div style="margin-top: 30px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794.9959973112273!2d31.07481682574619!3d-17.993338862405295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x193197416f39e9e5%3A0x16ae76fd511327d5!2sYouth%20Advocates%20Zimbabwe!5e0!3m2!1sen!2szw!4v1744378163283!5m2!1sen!2szw" width="100%" height="270px" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div style="background: white; border-radius: 10px; padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: 100%;">
+                    <h3 style="margin-bottom: 25px; color: #f3972eff; font-size: 1.5rem; font-weight: 700; text-align: center;">Send us a Message</h3>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="3bc24d6b-2f6e-4366-a463-883d33f113a4">
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; font-size: 0.95rem;">Your Name</label>
+                            <input type="text" name="name" style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 1rem; transition: all 0.3s ease; background: #f8f9fa;" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; font-size: 0.95rem;">Your Email</label>
+                            <input type="email" name="email" style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 1rem; transition: all 0.3s ease; background: #f8f9fa;" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; font-size: 0.95rem;">Message</label>
+                            <textarea name="message" style="width: 100%; padding: 14px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 1rem; min-height: 180px; resize: vertical; transition: all 0.3s ease; background: #f8f9fa;" required></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background: #d34300ff; color: white; border: none; padding: 16px 40px; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; width: 100%; display: block; text-align: center;">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div style="margin-top: 20px; text-align: center;">
+                        <p style="font-size: 0.9rem; color: #7d756c; margin-bottom: 5px;">
+                            <i class="bi bi-clock" style="margin-right: 5px;"></i> We respond within 24 hours
+                        </p>
+                        <p style="font-size: 0.85rem; color: #a13dcf; font-style: italic;">
+                            Your message is important to us
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Youth Advocates</span>
+          </a>
+          <p>Youth Advocates is a youth-led organisation working to advance adolescents’ rights and amplify their voices where it matters. Youth Advocates continues building on extensive experience leading youth led research projects within the development field, ideally pioneering
+            programs partnering with the local communities.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/yadvocates_hub" class="twitter"><i class="bi bi-twitter-x"></i><img src="assets/img/social/xx.png"height="30"width="30" alt="x"></a>
+            <a href="https://www.facebook.com/YouthAdvocatesZimbabwe/" class="facebook"><i class="bi bi-facebook"></i> <img src="assets/img/social/facebookk.png"height="30"width="30" alt="facebook"></a>
+            <a href="https://www.linkedin.com/company/youthadvocates/?originalSubdomain=zw" class="instagram"><i class="bi bi-instagram"></i><img src="assets/img/social/linkedinn.png"height="30"width="30" alt="linkedin"></a>
+            <a href="https://www.youtube.com/@YouthAdvocatesZ" class="youtube"><i class="bi bi-youtube"></i><img src="assets/img/social/youtubee.png"height="30"width="40" alt="youtube"></a>
+            <a href="https://www.instagram.com/youthadvocates/?hl=en" class="instagram"><i class="bi bi-instagram"></i><img src="assets/img/social/instagramm.png"height="30"width="30" alt="instagram"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <!--li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li-->
+            <li><a href="programs.html">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Pride</h4>
+          <ul>
+          <li><a href="">Youth Engagement</a></li>
+            <li><a href="">393 - Youth Helpline</a></li>
+          <li><a href="">Women Empowerment</a></li>
+          <li><a href="">YA Adolescents clinic</a></li>
+          <li><a href="">YA Leadership Program</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>926 New Zengeza 4</p>
+          <p>Chitungwiza</p>
+          <p>Zimbabwe</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+263 77 746 9107</span></p>
+          <p><strong>Email:</strong> <span>advocates@yadvoctes.org</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Youth Advocates</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed with 💕by <a href="teammm.html">YAZ Web Team</a>
+      </div>
+    </div>
+
+  </footer>
+  <!--details -->
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Ensure video plays correctly on all devices with diagnostics and fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('heroVideo');
+
+            if (!heroVideo) return;
+
+            // Force muted inline playback before calling play()
+            heroVideo.muted = true;
+            heroVideo.setAttribute('muted', '');
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+            heroVideo.setAttribute('preload', 'auto');
+
+            // Log basic events to help diagnose issues during development
+            heroVideo.addEventListener('error', () => {
+                console.warn('Hero video error:', heroVideo.error);
+            });
+            heroVideo.addEventListener('loadeddata', () => {
+                // Attempt play as soon as enough data is loaded
+                tryPlay();
+            });
+
+            function tryPlay() {
+                const playPromise = heroVideo.play();
+                if (playPromise && typeof playPromise.then === 'function') {
+                    playPromise.catch((err) => {
+                        console.warn('Hero video autoplay prevented:', err);
+                        showFallback();
+                    });
+                }
+            }
+
+            function showFallback() {
+                // If autoplay fails, keep poster image visible
+                heroVideo.pause();
+                heroVideo.setAttribute('controls', '');
+                // Optionally, we could swap to a background image on the section
+                const heroSection = document.getElementById('hero');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = 'url(assets/img/Hero-BG-3.png)';
+                    heroSection.style.backgroundSize = 'cover';
+                    heroSection.style.backgroundPosition = 'center';
+                }
+            }
+
+            // Initial attempt
+            tryPlay();
+
+            // Pause video when tab is not visible to save resources
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    heroVideo.pause();
+                } else {
+                    tryPlay();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
